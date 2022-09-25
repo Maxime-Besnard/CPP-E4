@@ -9,17 +9,18 @@ void main(){
 
     while(i < 3){
 
-        std::cin >> n;
+        while (std::cin >> n) {
 
-        b = isPrime(n);
+            b = isPrime(n);
 
-        if (b == 0) {
-            std::cout << n << " is a prime: False\n";
+            if (b == 0) {
+                std::cout << n << " is a prime: False\n";
+            }
+            else {
+                std::cout << n << " is a prime: True\n";
+            }
+            i++;
         }
-        else {
-            std::cout << n << " is a prime: True\n";
-        }
-        i++;
     }
 
     return;
