@@ -3,6 +3,9 @@
 
 int n = 1;
 bool isPrime(int n) {
+    if (n == 2) {
+        return true;
+    }
     if (n == 1 || n % 2 == 0) {
         return false;
     }
