@@ -1,0 +1,15 @@
+Review du programme cartesian_vector_param du groupe 8
+
+Lorque l'on tente de générer l'executable main.exe (sous windows), il y a des erreurs de compilation : 
+
+- La première est due à l'oubli d'un return à la fin de la fonction operator<< : le flux est généré mais pas retourné
+
+- La deuxième est due à la ligne "add_library(vector SHARED vector.cpp)" qui pose soucis (sur windows tout du moins),
+il nous a fallu la remplacer par "add_library(vector STATIC vector.cpp)". A noter que l'erreur vient probablement
+de l'utilisation de windows.
+
+Suite à la compilation du programme, il restait une erreur de comportement :
+
+- L'erreur est due à un mauvais type de retour de la fonction operator+ qui doit avoir un type de retour Vector, 
+et non pas un Vector& : cela avait pour effet de remplacer les valeurs attendues par des addresses.
+(contrairement à la fonction operator+=, qui doit bien avoir un type de retour Vector&)
