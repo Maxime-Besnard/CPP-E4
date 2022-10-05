@@ -1,7 +1,7 @@
 #include <iostream>
 #include "isPrime.h"
 
-void main() {
+int main() {
     int64_t n;
     while(std::cin.peek() != '\n'){
 	std::cin >> n;
@@ -12,5 +12,5 @@ void main() {
             std::cout << n << " is a prime: False\n";
         }
     }
-    return;
+    return 0;
 }
