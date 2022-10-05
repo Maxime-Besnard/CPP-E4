@@ -2,7 +2,7 @@
 #include "isPrime.h"
 
 int n = 1;
-bool isPrime(int n) {
+bool isPrime(int64_t n) {
     if (n == 2) {
         return true;
     }
