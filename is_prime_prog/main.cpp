@@ -4,7 +4,7 @@
 void main() {
     int n;
     while(std::cin.peek() != '\n'){
-	    std::cin >> n;
+	std::cin >> n;
         if(isPrime(n)){
             std::cout << n << " is a prime: True\n";
         }
