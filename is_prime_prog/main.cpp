@@ -2,7 +2,7 @@
 #include "isPrime.h"
 
 void main() {
-    int n;
+    int64_t n;
     while(std::cin.peek() != '\n'){
 	std::cin >> n;
         if(isPrime(n)){
