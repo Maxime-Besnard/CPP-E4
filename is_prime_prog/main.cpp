@@ -3,7 +3,8 @@
 
 int main() {
     int64_t n;
-    while(std::cin >> n){
+    while(std::cin.peek() != '\n' && std::cin.peek() != EOF){
+        std::cin >> n;
         if(isPrime(n)){
             std::cout << n << " is a prime: True\n";
         }
