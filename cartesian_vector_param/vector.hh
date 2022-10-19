@@ -21,19 +21,19 @@ public:
 // Public Member functions here
     Vector operator+(const Vector& rhs);
     Vector& operator+=(const Vector& rhs);
-    Vector& operator+=(int n);
+    Vector& operator+=(value n);
     Vector& operator-=(const Vector& rhs);
-    int operator*(const Vector& rhs);
-    Vector operator*(int k);
-    Vector& operator*=(int k);
-    int& operator[](int i);
-    void setValues(int* v);
-    int getValue(int i);
+    value operator*(const Vector& rhs);
+    Vector operator*(value k);
+    Vector& operator*=(value k);
+    value& operator[](value i);
+    void setValues(value* v);
+    value getValue(int i);
 
 private:
     // Private Member functions here
     // Member variables are ALWAYS private, and they go here
-    int v_[NDIM];
+    value v_[NDIM];
 };
 
 // Nonmember function operators go here
