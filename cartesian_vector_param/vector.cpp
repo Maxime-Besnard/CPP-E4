@@ -95,9 +95,10 @@ int& Vector::operator[](int i) {
 
 std::ostream& operator<<(std::ostream& out, Vector v)
 {
+	out << "{";
 	for (int i = 0; i < NDIM - 1; i++) {
-		out << v.getValue(i) << ' ';
+		out << v.getValue(i) << ", ";
 	}
-	out << v.getValue(NDIM - 1);
+	out << v.getValue(NDIM - 1) << "}";
 	return out;
 }
