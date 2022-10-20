@@ -14,19 +14,19 @@ Vector::Vector(){
 	}
 }
 
-void Vector::setValues(int* v) {
+void Vector::setValues(value* v) {
 	for (int i = 0; i < NDIM; i++) {
 		v_[i] = v[i];
 	}
 }
 
-int Vector::getValue(int i) {
+value Vector::getValue(int i) {
 	return this->v_[i];
 }
 
 Vector Vector::operator+(const Vector& rhs){
 	Vector v = Vector{};
-	int tab[NDIM];
+	value tab[NDIM];
 	for (int i = 0; i < NDIM; i++) {
 		tab[i] = rhs.v_[i] + this->v_[i];
 	}
@@ -35,7 +35,7 @@ Vector Vector::operator+(const Vector& rhs){
 }
 
 Vector& Vector::operator+=(const Vector& rhs) {
-	int tab[NDIM];
+	value tab[NDIM];
 	for (int i = 0; i < NDIM; i++) {
 		tab[i] = rhs.v_[i] + this->v_[i];
 	}
@@ -43,8 +43,8 @@ Vector& Vector::operator+=(const Vector& rhs) {
 	return *this;
 }
 
-Vector& Vector::operator+=(int n) {
-	int tab[NDIM];
+Vector& Vector::operator+=(value n) {
+	value tab[NDIM];
 	for (int i = 0; i < NDIM; i++) {
 		tab[i] = n + this->v_[i];
 	}
@@ -53,7 +53,7 @@ Vector& Vector::operator+=(int n) {
 }
 
 Vector& Vector::operator-=(const Vector& rhs) {
-	int tab[NDIM];
+	value tab[NDIM];
 	for (int i = 0; i < NDIM; i++) {
 		tab[i] = this->v_[i] - rhs.v_[i];
 	}
@@ -61,17 +61,17 @@ Vector& Vector::operator-=(const Vector& rhs) {
 	return *this;
 }
 
-int Vector::operator*(const Vector& rhs) {
-	int res = 0;
+value Vector::operator*(const Vector& rhs) {
+	value res = 0;
 	for (int i = 0; i < NDIM; i++) {
 		res += this->v_[i] * rhs.v_[i];
 	}
 	return res;
 }
 
-Vector Vector::operator*(int k) {
+Vector Vector::operator*(value k) {
 	Vector v = Vector{};
-	int tab[NDIM];
+	value tab[NDIM];
 	for (int i = 0; i < NDIM; i++) {
 		tab[i] = this->v_[i] * k;
 	}
@@ -79,8 +79,8 @@ Vector Vector::operator*(int k) {
 	return v;
 }
 
-Vector& Vector::operator*=(int k) {
-	int tab[NDIM];
+Vector& Vector::operator*=(value k) {
+	value tab[NDIM];
 	for (int i = 0; i < NDIM; i++) {
 		tab[i] = this->v_[i] * k;
 	}
@@ -88,19 +88,19 @@ Vector& Vector::operator*=(int k) {
 	return *this;
 }
 
-value& Vector::operator[](int i) {
+value Vector::operator[](value i) const {
 	return v_[i];
-	}
+}
 
-value Vector::operator[](int i) const {
-	return v_[i];
+value& Vector::operator[](value i) {
+	return this->v_[i];
 }
 
 std::ostream& operator<<(std::ostream& out, Vector v)
 {
 	out << "{";
-	for (size_t i = 0; i < NDIM - 1; i++) {
-		out << v.getValue(i) << ',';
+	for (int i = 0; i < NDIM - 1; i++) {
+		out << v.getValue(i) << ",";
 	}
 	out << v.getValue(NDIM - 1) << "}";
 	return out;
