@@ -133,7 +133,7 @@ value Vector::operator[](size_t idx) const {
 std::ostream& operator<<(std::ostream& o, const Vector& v) {
 	o << "{";
 	for (int i = 0; i < v.size()-1; i++) {
-		o << v[i] << ", ";
+		o << v[i] << ",";
 	}
 
 	o << v[v.size() - 1] << "}";
