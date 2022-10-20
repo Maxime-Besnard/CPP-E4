@@ -1,8 +1,10 @@
-#include <ostream>
+#pragma once
 
+#include <ostream>
+#include <initializer_list>
 #include "config.h"
 
-    class Vector
+class Vector
 {
 public:
     // DO NOT CHANGE THIS
@@ -13,28 +15,26 @@ public:
 
     // Add suitable constructors
     Vector();
-    Vector(std::initializer_list<int> v);
+    Vector(std::initializer_list<int> values);
     // possibly more
 
 // Public Member functions here
-    void setValues(int* v);
-    int getValue(int i);
     Vector operator+(const Vector& rhs);
     Vector& operator+=(const Vector& rhs);
-    Vector& operator+=(int n);
+    Vector& operator+=(value n);
     Vector& operator-=(const Vector& rhs);
-    int operator*(const Vector& rhs);
-    Vector operator*(int k);
-    Vector& operator*=(int k);
-    value& operator[](int i);
-    value operator[](int i) const;
-    // More to go
+    value operator*(const Vector& rhs);
+    Vector operator*(value k);
+    Vector& operator*=(value k);
+    value operator[](value i) const;
+    value& operator[](value i);
+    void setValues(value* v);
+    value getValue(int i);
 
 private:
     // Private Member functions here
-    int v_[NDIM];
-
     // Member variables are ALWAYS private, and they go here
+    value v_[NDIM];
 };
 
 // Nonmember function operators go here
