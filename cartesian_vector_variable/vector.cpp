@@ -1,17 +1,17 @@
 #include "vector.hh"
 #include <initializer_list>
 
-Vector::Vector(std::initializer_list<int> l){
-	const int* tab = std::data(l);
+Vector::Vector(std::initializer_list<value> l){
+	const value* tab = std::data(l);
 	taille = l.size();
-	v_ = std::make_unique<int[]>(taille);
+	v_ = std::make_unique<value[]>(taille);
 	for (int i = 0; i < l.size(); i++) {
 		v_[i] = tab[i];
 	}
 }
 
 Vector::Vector(size_t N) {
-	v_ = std::make_unique<int[]>(N);
+	v_ = std::make_unique<value[]>(N);
 	for (int i = 0; i < N; i++) {
 		v_[i] = 0;
 	}
@@ -20,7 +20,7 @@ Vector::Vector(size_t N) {
 
 Vector::Vector(const Vector& v) {
 	taille = v.taille;
-	v_ = std::make_unique<int[]>(taille);
+	v_ = std::make_unique<value[]>(taille);
 	for (int i = 0; i < taille; i++) {
 		v_[i] = v[i];
 	}
@@ -28,7 +28,7 @@ Vector::Vector(const Vector& v) {
 
 Vector& Vector::operator=(const Vector& v) {
 	taille = v.taille;
-	v_ = std::make_unique<int[]>(taille);
+	v_ = std::make_unique<value[]>(taille);
 	for (int i = 0; i < taille; i++) {
 		v_[i] = v[i];
 	}

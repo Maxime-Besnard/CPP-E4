@@ -42,7 +42,7 @@ private:
 
 // Member variables are ALWAYS private, and they go here
     size_t taille;
-    std::unique_ptr<int[]> v_;
+    std::unique_ptr<value[]> v_;
 };
 
 // Nonmember function operators go here
