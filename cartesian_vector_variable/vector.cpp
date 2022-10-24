@@ -103,7 +103,7 @@ value Vector::operator*(const Vector& rhs) const {
 		throw std::runtime_error("Incompatible size");
 	}
 
-	int result = 0;
+	value result = 0;
 	for (int i = 0; i < taille; i++) {
 		result += v_[i] * rhs.v_[i];
 	}
